@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "5070a4e9-e76b-4e93-af00-7a6e5a202081",
+		"name": "Max_Coverage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TC01_Applicant Services_Related Records_ One Vantage Policy_Applies for $10,000 Final Expense Level",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7cc2fb30-75a6-4da8-90f3-8a3c773d2e7a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7559ce04-9ee9-4a83-93f6-c3a26612a78e",
+						"exec": [
+							"console.log(environment);\r",
+							"console.log(JSON.stringify(responseBody, null, 2));\r",
+							"console.log(JSON.stringify(responseHeaders, null, 2));\r",
+							"\r",
+							"//First Test Case\r",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"//Second Test Case\r",
+							"tests[\"Body matches string\"] = responseBody.has('{\"maxCoverageAmount\":40000.0,\"totalInternalFaceAmount\":0.0,\"outcome\":\"Refer\",\"clientRelatedRecords\":[{\"clientNumber\":\"0000001046522\",\"relatedRecords\":[{\"adminSysCode\":\"VANTAGE\",\"company\":\"UNITED\",\"owningCompany\":\"UNITED\",\"policyNumber\":\"3787356\",\"policyStatus\":\"INFORCE\",\"faceAmount\":100000.0,\"policyType\":\"UNIVERSAL LIFE\",\"roleType\":\"[OWNER,  PAYOR,  INSURED]\",\"paidToDate\":\"2019-03-01\",\"effectiveDate\":\"1983-03-01\",\"product\":\"UFLEX\"}]}],\"coverageMessages\":[\"Due to the amount of inforce Living Promise coverage, the maximum coverage amount available for this application is $40,000. The maximum coverage available is calculated using only United of Omaha Life Insurance policies. Please update the face amount on the Plan Information screen.\"]}');"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "REQUEST_CLIENT_ID",
+						"value": " IPIPELINE",
+						"type": "text"
+					},
+					{
+						"key": "BYPASS_SECURITY",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"addressLine1\": \"630 Saint Augustine Dr\",\r\n\"addressLine2\": \"\",\r\n\"city\": \"Salinas\",\r\n\"company\": \"United\",\r\n\"dateOfBirth\": \"1951-05-12\",\r\n\"faceAmount\": 0,\r\n\"firstName\": \"Gary\",\r\n\"gender\": \"M\",\r\n\"issueAge\": 67,\r\n\"lastName\": \"Coppetti\",\r\n\"phoneNumber\": \"831-206-4854\",\r\n\"prefix\": \"\",\r\n\"product\": \"FEPL\",\r\n\"socialSecurityNumber\": \"570-70-2714\",\r\n\"state\": \"CA\",\r\n\"suffix\": \"\",\r\n\"vendorId\": \"999999-999999999\",\r\n\"zip\": \"93905\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://webcat4.mutualofomaha.com/NBS_Applicant_Services/applicant/life/relatedrecords/maxcoverage",
+					"protocol": "https",
+					"host": [
+						"webcat4",
+						"mutualofomaha",
+						"com"
+					],
+					"path": [
+						"NBS_Applicant_Services",
+						"applicant",
+						"life",
+						"relatedrecords",
+						"maxcoverage"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "TC01_Applicant Services_Related Records_ One Vantage Policy_Applies for $10,000 Final Expense Level",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "REQUEST_CLIENT_ID",
+								"value": "IPIPELINE",
+								"type": "text"
+							},
+							{
+								"key": "BYPASS_SECURITY",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"addressLine1\": \"335 S Colorado Blvd\",\n    \"addressLine2\": \"\",\n    \"city\": \"Denver\",\n    \"company\": \"United\",\n    \"dateOfBirth\": \"1980-05-05\",\n    \"faceAmount\": 0,\n    \"firstName\": \"Rider\",\n    \"gender\": \"M\",\n    \"issueAge\": 45,\n    \"lastName\": \"Termlife\",\n    \"phoneNumber\": \"111-111-1111\",\n    \"prefix\": \"\",\n    \"product\": \"FEPL\",\n    \"socialSecurityNumber\": \"676-11-8099\",\n    \"state\": \"CO\",\n    \"suffix\": \"\",\n    \"vendorId\": \"999999-999999999\",\n    \"zip\": \"80246\"\n}"
+						},
+						"url": {
+							"raw": "https://webcat4.mutualofomaha.com/NBS_Applicant_Services/applicant/life/relatedrecords/maxcoverage",
+							"protocol": "https",
+							"host": [
+								"webcat4",
+								"mutualofomaha",
+								"com"
+							],
+							"path": [
+								"NBS_Applicant_Services",
+								"applicant",
+								"life",
+								"relatedrecords",
+								"maxcoverage"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 11 Mar 2019 21:02:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache-Coyote/1.1"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "NBS_Applicant_Services:CAT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"Sorry, there is a problem processing the request.\",\n    \"url\": \"/NBS_Applicant_Services/applicant/life/relatedrecords/maxcoverage\"\n}"
+				}
+			]
+		},
+		{
+			"name": "TC02_Swagger UI Tool_Applicant Services_Related Records_One LMF Policy_Applied for $20,000 Final Expense Level",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f8900b19-3d15-42c9-815a-076a9fff5c5f",
+						"exec": [
+							"//First Test Case",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"//Second Test Case",
+							"tests[\"Body matches string\"] = responseBody.has('{\"maxCoverageAmount\": 40000, \"totalInternalFaceAmount\": 5000, \"outcome\": \"Refer\", \"clientRelatedRecords\": [{\"clientNumber\": \"0000014637942\", \"relatedRecords\": [{\"adminSysCode\": \"LMF\", \"company\": \"UNITED\", \"owningCompany\": \"UNITED\", \"policyNumber\": \"8315466\", \"policyStatus\": \"INFORCE\", \"faceAmount\": 5000, \"policyType\": \"SENIOR AGE LIFE 3RD PARTY CREDIT CARD\", \"roleType\": \"[OWNER, PAYOR, INSURED]\", \"paidToDate\": \"2017-06-15\", \"effectiveDate\": \"2001-09-26\", \"product\": \"CCWAY\"}]}], \"coverageMessages\": [ \"Due to the amount of inforce Living Promise coverage, the maximum coverage amount available for this application is $40,000. The maximum coverage available is calculated using only United of Omaha Life Insurance policies. Please update the face amount on the Plan Information screen.\"]}');"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "461a082f-2ead-4d3d-9dc7-8a8fa0f3f231",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "REQUEST_CLIENT_ID",
+						"value": " IPIPELINE",
+						"type": "text"
+					},
+					{
+						"key": "BYPASS_SECURITY",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"addressLine1\": \"3963 Iowa St\",\r\n\"addressLine2\": \"string\",\r\n\"city\": \"Omaha\",\r\n\"company\": \"United\",\r\n\"dateOfBirth\": \"1933-05-03\",\r\n\"faceAmount\": 0,\r\n\"firstName\": \"Quanita\",\r\n\"gender\": \"f\",\r\n\"issueAge\": 85,\r\n\"lastName\": \"Smith\",\r\n\"phoneNumber\": \"\",\r\n\"prefix\": \"\",\r\n\"product\": \"FEPL\",\r\n\"socialSecurityNumber\": \"461-98-1384\",\r\n\"state\": \"NE\",\r\n\"suffix\": \"\",\r\n\"vendorId\": \"999999-999999999\",\r\n\"zip\": \"68112\"\r\n}"
+				},
+				"url": {
+					"raw": "https://webcat4.mutualofomaha.com/NBS_Applicant_Services/applicant/life/relatedrecords/maxcoverage",
+					"protocol": "https",
+					"host": [
+						"webcat4",
+						"mutualofomaha",
+						"com"
+					],
+					"path": [
+						"NBS_Applicant_Services",
+						"applicant",
+						"life",
+						"relatedrecords",
+						"maxcoverage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC03_Swagger UI Tool_Applicant Services_Related Records_One_FUW",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dcf83bde-b81b-4c75-b036-26f840a1ac7e",
+						"exec": [
+							"//First Test Case",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"//Second Test Case",
+							"tests[\"Body matches string\"] = responseBody.has('{\"maxCoverageAmount\": 40000, \"totalInternalFaceAmount\": 0, \"outcome\": \"Accept\", \"clientRelatedRecords\": [{\"clientNumber\": \"0000033834778\", \"relatedRecords\": [{\"adminSysCode\": \"CAPSIL\", \"company\": \"UNITED\", \"owningCompany\": \"UNITED\", \"policyNumber\": \"BU1941298\", \"policyStatus\": \"APP PENDING\", \"faceAmount\": 250000, \"policyType\": \"LEVEL RENEWABLE TERM\", \"roleType\": \"[OWNER, INSURED, PAYOR]\", \"paidToDate\": \"0001-01-05\", \"effectiveDate\": \"2017-05-06\", \"product\": \"10GPT\"}]},{\"clientNumber\": \"0000033798082\", \"relatedRecords\": [{\"adminSysCode\": \"CAPSIL\", \"company\": \"UNITED\", \"owningCompany\": \"UNITED\", \"policyNumber\": \"BU1941298\", \"policyStatus\": \"APP PENDING\", \"faceAmount\": 250000, \"policyType\": \"LEVEL RENEWABLE TERM\", \"roleType\": \"[OWNER, INSURED, PAYOR]\", \"paidToDate\": \"0001-01-05\", \"effectiveDate\": \"2017-05-06\", \"product\": \"10GPT\"}]}], \"coverageMessages\": [ \"Due to the amount of inforce Living Promise coverage, the maximum coverage amount available for this application is $40,000. The maximum coverage available is calculated using only United of Omaha Life Insurance policies. Please update the face amount on the Plan Information screen.\"]}');"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8874c9cb-545e-4aa2-b282-865b95915f83",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "REQUEST_CLIENT_ID",
+						"value": " IPIPELINE",
+						"type": "text"
+					},
+					{
+						"key": "BYPASS_SECURITY",
+						"value": " true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"addressLine1\": \"641 Birch Ave\",\r\n\"addressLine2\": \"\",\r\n\"city\": \"Akron\",\r\n\"company\": \"United\",\r\n\"dateOfBirth\": \"1963-06-27\",\r\n\"faceAmount\": 0,\r\n\"firstName\": \"Eldrie\",\r\n\"gender\": \"F\",\r\n\"issueAge\": 53,\r\n\"lastName\": \"Bohm\",\r\n\"phoneNumber\": \"\",\r\n\"prefix\": \"\",\r\n\"product\": \"FEPL\",\r\n\"socialSecurityNumber\": \"666-46-3638\",\r\n\"state\": \"CO\",\r\n\"suffix\": \"\",\r\n\"vendorId\": \"999999-999999999\",\r\n\"zip\": \"80720\" \r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://webcat4.mutualofomaha.com/NBS_Applicant_Services/applicant/life/relatedrecords/maxcoverage",
+					"protocol": "https",
+					"host": [
+						"webcat4",
+						"mutualofomaha",
+						"com"
+					],
+					"path": [
+						"NBS_Applicant_Services",
+						"applicant",
+						"life",
+						"relatedrecords",
+						"maxcoverage"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
